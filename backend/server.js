@@ -4,10 +4,10 @@ const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const path = require('path');
 
-// Load env vars
+// Load environment variables
 dotenv.config();
 
-// Connect to database
+// Connect to MongoDB
 connectDB();
 
 const app = express();
@@ -16,36 +16,40 @@ const app = express();
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// Enable CORS with specific options
+// Enable CORS
 const corsOptions = {
   origin: ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:5175'],
   credentials: true,
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
 };
-
 app.use(cors(corsOptions));
 
-// Serve static files from uploads directory
+// Serve uploads folder
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Routes
+// API Routes
 app.use('/api/users', require('./routes/userRoutes'));
-// app.use('/api/categories', require('./routes/categoryRoutes')); // Commented out as category routes don't exist
+// app.use('/api/categories', require('./routes/categoryRoutes')); // Uncomment if exists
 app.use('/api/menu', require('./routes/menuRoutes'));
-// app.use('/api/cart', require('./routes/cartRoutes')); // Commented out as cart routes don't exist
+// app.use('/api/cart', require('./routes/cartRoutes')); // Uncomment if exists
 app.use('/api/orders', require('./routes/orderRoutes'));
 app.use('/api/reservations', require('./routes/reservationRoutes'));
-// app.use('/api/reviews', require('./routes/reviewRoutes')); // Commented out as review routes don't exist
 app.use('/api/reviews', require('./routes/reviewRoutes'));
 app.use('/api/contact', require('./routes/contactRoutes'));
 
-// Serve static assets in production
+// Serve frontend in production
 if (process.env.NODE_ENV === 'production') {
-  // Set static folder
-  app.use(express.static('frontend/build'));
-  
+  // Adjust 'dist' to 'build' if using CRA
+  const frontendPath = path.join(__dirname, 'frontend', 'dist');
+  app.use(express.static(frontendPath));
+
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+    res.sendFile(path.resolve(frontendPath, 'index.html'));
+  });
+} else {
+  // Optional: Root route in development
+  app.get('/', (req, res) => {
+    res.send('API is running...');
   });
 }
 
