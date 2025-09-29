@@ -1,0 +1,392 @@
+.menu-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.menu-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.menu-header p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.refresh-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.refresh-btn:hover {
+  background-color: #45a049;
+}
+
+.menu-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.menu-sub-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+  justify-content: center;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.filter-btn.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.menu-item-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.menu-item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item-image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.menu-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.menu-item-card:hover .menu-item-image {
+  transform: scale(1.05);
+}
+
+.no-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  color: #999;
+  font-size: 1rem;
+}
+
+.vegetarian-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #28a745;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.menu-item-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.menu-item-title {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.menu-item-price {
+  font-weight: bold;
+  color: #e74c3c;
+  font-size: 1.3rem;
+  white-space: nowrap;
+}
+
+.menu-item-subcategory {
+  margin-bottom: 12px;
+}
+
+.subcategory-badge {
+  background-color: #3498db;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Ingredient Preview */
+.ingredient-preview {
+  margin-bottom: 12px;
+}
+
+.ingredient-preview-label {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.ingredient-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.ingredient-tag {
+  background-color: #f1f2f6;
+  color: #57606f;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+.ingredient-tag.more {
+  background-color: #dfe4ea;
+  font-style: italic;
+}
+
+.menu-item-description {
+  color: #555;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.menu-item-feedback {
+  margin-bottom: 12px;
+}
+
+.rating-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stars {
+  display: flex;
+}
+
+.star {
+  color: #ddd;
+  font-size: 1.1rem;
+}
+
+.star.full {
+  color: #ffc107;
+}
+
+.star.half {
+  color: #ffc107;
+  position: relative;
+}
+
+.star.half::before {
+  content: '☆';
+  color: #ddd;
+  position: absolute;
+  left: 0;
+}
+
+.rating-value {
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+}
+
+.review-count {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.no-reviews {
+  font-style: italic;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.menu-item-stats {
+  margin-bottom: 15px;
+}
+
+.order-count {
+  font-size: 0.9rem;
+  color: #666;
+  background-color: #f0f0f0;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.menu-item-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.btn-add-to-cart {
+  display: flex;
+  align-items: center;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  flex: 1;
+  justify-content: center;
+}
+
+.btn-add-to-cart:hover:not(:disabled) {
+  background-color: #0069d9;
+}
+
+.btn-add-to-cart:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.plus-icon {
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.view-more-btn {
+  padding: 10px 16px;
+  background-color: #6c757d;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  flex: 1;
+  text-align: center;
+}
+
+.view-more-btn:hover {
+  background-color: #5a6268;
+}
+
+.no-items-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .menu-page {
+    padding: 15px;
+  }
+  
+  .menu-header h1 {
+    font-size: 2rem;
+  }
+  
+  .menu-items {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .menu-filters,
+  .menu-sub-filters {
+    flex-wrap: wrap;
+  }
+  
+  .filter-btn {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+  
+  .menu-item-header {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  
+  .menu-item-title {
+    font-size: 1.2rem;
+  }
+  
+  .menu-item-price {
+    font-size: 1.1rem;
+  }
+  
+  .menu-item-content {
+    padding: 15px;
+  }
+  
+  .menu-item-actions {
+    flex-direction: column;
+  }
+}

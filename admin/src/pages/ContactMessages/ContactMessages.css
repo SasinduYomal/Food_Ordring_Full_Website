@@ -1,0 +1,168 @@
+.contact-messages {
+  padding: 25px;
+  margin-top: 80px;
+  margin-left: 250px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
+  min-height: 100vh;
+}
+
+.messages-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.messages-header h1 {
+  margin: 0;
+  color: #1a202c;
+  font-weight: 700;
+  font-size: 2.2rem;
+  letter-spacing: -0.5px;
+}
+
+.messages-list h2 {
+  color: #1a202c;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 30px 0 20px 0;
+}
+
+.no-messages {
+  text-align: center;
+  color: #718096;
+  font-style: italic;
+  padding: 20px;
+}
+
+.table-container {
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.table th,
+.table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.table th {
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background-color: #fafbff;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tr:hover td {
+  background-color: #f8fafc;
+}
+
+.message-preview {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+.status-new {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status-read {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.status-replied {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status-archived {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.status-select {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  margin-right: 8px;
+  font-size: 0.85rem;
+}
+
+.action-btn {
+  background: #edf2f7;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-right: 5px;
+}
+
+.action-btn:hover {
+  background: #e2e8f0;
+  color: #2d3748;
+}
+
+.delete-btn {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.delete-btn:hover {
+  background: #f5c6cb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-messages {
+    margin-left: 0;
+    padding: 20px 15px;
+  }
+  
+  .messages-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .table th,
+  .table td {
+    padding: 12px 15px;
+  }
+  
+  .message-preview {
+    max-width: 100px;
+  }
+}
